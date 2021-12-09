@@ -1,0 +1,13 @@
+*.pyc                                                                                                  
+*.swp                                                                                                  
+*.swo                                                                                                  
+*-remote                                                                                               
+*.log*
+nohup.out
+*.o
+*.so                                                                                                   
+*.d
+*.exe
+
+idea/
+
