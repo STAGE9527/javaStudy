@@ -2,7 +2,7 @@ package base.numath;
 
 import java.util.Random;
 
-public class NumberMath {
+public class NumathTest {
     public static void main(String[] args) {
         Integer x = 5;
         x = x + 10;

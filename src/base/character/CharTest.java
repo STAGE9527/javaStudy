@@ -1,5 +1,7 @@
 package base.character;
 
+import java.util.Random;
+
 public class CharTest {
     public static void main(String[] args) {
         Character s = 'a';
@@ -14,9 +16,10 @@ public class CharTest {
 
         String str = Character.toString(s);
         System.out.println("字符串 " + str); // 返回字符的字符串形式，字符串的长度仅为1
-
+//        new Random().nextInt(1);
         System.out.println("访问\"菜鸟教程!\"");
-        //        test2();
+        genCase();
+        // test2();
     }
 
     public static void test2() {
@@ -37,6 +40,25 @@ public class CharTest {
         System.out.println(ch);
         System.out.println(c);
 
+    }
+
+    public static void genCase() {
+        String sr1 = "I Like JAVA ! I learn Java everyday.";
+        String sr2 = "";
+        String sr3 = "";
+
+        for (int i = 0; i < sr1.length(); i++) {//获取字符串的长度用的是length();
+            if (Character.isUpperCase(sr1.charAt(i))) {//先将String类型的字符串转换成char类型                                                                            再获取每一个字符元素，用charAt(i)实现
+                sr2 += sr1.charAt(i) + " ";//提取大写字母
+            }
+
+            if (Character.isLowerCase(sr1.charAt(i))) {
+                sr3 += sr1.charAt(i) + " ";//提取小写字母
+            }
+        }
+
+        System.out.println("大写字母有：" + sr2);
+        System.out.println("小写字母有：" + sr3);
     }
 
 }
