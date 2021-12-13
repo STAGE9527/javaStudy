@@ -2,25 +2,25 @@ package base.string;
 
 /**
  * String：字符串常量，字符串长度不可变。Java中String 是immutable（不可变）的。用于存放字符的数组被声明为final的，因此只能赋值一次，不可再更改。
- *
+ * <p>
  * StringBuffer：字符串变量（Synchronized，即线程安全）。如果要频繁对字符串内容进行修改，出于效率考虑最好使用 StringBuffer，
  * 如果想转成 String 类型，可以调用 StringBuffer 的 toString() 方法。Java.lang.StringBuffer 线程安全的可变字符序列。
  * 在任意时间点上它都包含某种特定的字符序列，但通过某些方法调用可以改变该序列的长度和内容。可将字符串缓冲区安全地用于多个线程。
- *
+ * <p>
  * StringBuilder：字符串变量（非线程安全）。在内部 StringBuilder 对象被当作是一个包含字符序列的变长数组。
- *
+ * <p>
  * 基本原则：
  * 如果要操作少量的数据用 String ；
  * 单线程操作大量数据用StringBuilder ；
  * 多线程操作大量数据，用StringBuffer。
- *
+ * <p>
  * String 长度大小不可变
  * StringBuffer 和 StringBuilder 长度可变
  * StringBuffer 线程安全 StringBuilder 线程不安全
  * StringBuilder 速度快
- * */
+ */
 public class StringBufferTest {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         StringBuilder sb = new StringBuilder(10);
         sb.append("Runoob..");
         System.out.println(sb);         //Runoob..
@@ -28,21 +28,21 @@ public class StringBufferTest {
         System.out.println(sb);         //Runoob..!
         sb.insert(8, "Java");
         System.out.println(sb);          //Runoob..Java!
-        sb.delete(5,8);
+        sb.delete(5, 8);
         System.out.println(sb);          //RunooJava!
         buffertest();
     }
 
-    public static void buffertest(){
+    public static void buffertest() {
         StringBuffer sBuffer = new StringBuffer("菜鸟教程官网：");
         sBuffer.append("www");
         sBuffer.append(".runoob");
         sBuffer.append(".com");
         System.out.println(sBuffer);
         System.out.println(sBuffer.reverse());
-        System.out.println(sBuffer.delete(1,2));
-        System.out.println(sBuffer.insert(1,"ts"));
-        System.out.println(sBuffer.replace(1,2,"sb"));
+        System.out.println(sBuffer.delete(1, 2));
+        System.out.println(sBuffer.insert(1, "ts"));
+        System.out.println(sBuffer.replace(1, 2, "sb"));
         System.out.println(sBuffer.substring(1));
     }
 }
